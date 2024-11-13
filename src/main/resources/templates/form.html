@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Form</title>
+    <link rel="stylesheet" th:href="form.css">
+  </head>    
+  <body>
+    <div class="topnav">
+      <a role="button" th:href="@{/form}">Form</a>
+      <a role="button" th:href="@{/grades}">Grades</a>
+    </div>   
+    <div class="container">
+      <h2> Grade Portal </h2>
+      <form method="post" th:object="${grade}" th:action="@{/handleSubmit}"> 
+        <p th:errors="*{name}" style="color:red"></p>
+        <input type="text" placeholder="Name" th:field="*{name}">
+        <p th:errors="*{subject}" style="color:red"></p>
+        <input type="text" placeholder="Subject" th:field="*{subject}">
+        <p th:errors="*{score}" style="color:red"></p>
+        <input type="text" placeholder="Score" th:field="*{score}">  
+        <input type="hidden" th:field="*{id}" >  
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>  
+    </div>
+</body>
+</html>

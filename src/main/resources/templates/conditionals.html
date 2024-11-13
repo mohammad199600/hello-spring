@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Conditionals</title>
+    </head>
+    <body>
+          <!-- <p th:text="${sales>50}?'Sales are good!':'Sales are bad!'"></p>  
+          <div th:switch="${product}">
+            <p th:case="'chair'">50</p>
+            <p th:case="'tv'">200</p>
+            <p th:case="*">no match found</p>
+          </div>     -->
+          <!-- <h1 th:text="'Speed: '+${speed}"></h1>
+          <img th:src="${speed>60}?'images/slow-down.png':'images/speed-limit.png'"  th:alt="${speed>60}?'Slow Down':'Speed Limit'" width="200" height="200"> -->
+         <!-- <div th:switch="${painting}">
+            <div th:case="'starry-night'" >
+                <h1 >Starry Night</h1>
+                <img src="images/starry-night.jpeg"  alt="Starry Night" width="300" height="300">
+              </div>
+              <div th:case="'mona-lisa'">
+                <h1 >Mona Lisa</h1>
+                <img src="images/mona-lisa.jpeg"  alt="Mona Lisa" width="300" height="300">
+              </div>
+           </div> -->
+          
+          <!-- <img th:unless="${speed>60}" alt="Speed Limit" width="200" height="200"> -->
+           <div th:if="${budget>=5000}" th:switch="${make}">
+            <p th:case="'toyota'">Toyota Corolla: $5,000</p>
+            <p th:case="'volkswagen'">Volkswagen Jetta: $6,000</p>
+            <p th:case="'ford'">Ford Escape: $7,000</p>
+            <p th:case="'honda'">Honda Civic: $8,000</p>
+            <p th:case="*">No cars match your query.</p>
+           </div>
+           <p th:unless="${budget>=5000}">Sorry, we don't have any cars below $5,000</p>
+    </body>
+</html>
